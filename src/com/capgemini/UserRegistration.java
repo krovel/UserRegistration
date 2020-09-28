@@ -16,6 +16,7 @@ public class UserRegistration {
         }
         else
         	System.out.println("ERROR ! Requirement not satisfied.");
+        	first=sc.next();
 	}
 	public void lname() {
 		System.out.println("Enter your last name (NOTE: First letter should be capital and shuold have minimum 3 characters) :");
@@ -41,11 +42,25 @@ public class UserRegistration {
         else
         	System.out.println("ERROR ! Requirement not satisfied.");  
 	}
+	public void mobile() {
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter your Mobile No:");
+		String mobile = in.nextLine();
+		Pattern p = Pattern.compile("^[0-9]{2}[ ][1-9][0-9]{9}$");
+		Matcher m = p.matcher(mobile);
+		Boolean check = m.find();
+		if(check) {
+        	System.out.println("Valid Mobile Number.");
+        }
+        else
+        	System.out.println("ERROR ! Requirement not satisfied.");  
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration.");
 		UserRegistration u = new UserRegistration();
 		u.fname();
 		u.lname();
 		u.email();
+		u.mobile();
 	}
 }
