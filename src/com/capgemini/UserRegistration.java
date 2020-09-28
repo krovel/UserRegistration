@@ -29,10 +29,23 @@ public class UserRegistration {
         else
         	System.out.println("ERROR ! Requirement not satisfied.");
 	}
+	public void email() {
+		System.out.println("Enter your Email:");
+        String email = sc.next();
+		Pattern p = Pattern.compile("^abc+[.a-zA-Z0-9]*@bl.co+([.][a-zA-Z]{2})?$");
+		Matcher m = p.matcher(email);
+		Boolean check = m.find();
+		if(check) {
+        	System.out.println("Valid Email.");
+        }
+        else
+        	System.out.println("ERROR ! Requirement not satisfied.");  
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration.");
 		UserRegistration u = new UserRegistration();
 		u.fname();
 		u.lname();
+		u.email();
 	}
 }
