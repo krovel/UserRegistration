@@ -33,7 +33,7 @@ public class UserRegistration {
 	public void email() {
 		System.out.println("Enter your Email:");
         String email = sc.next();
-		Pattern p = Pattern.compile("^abc+[.a-zA-Z0-9]*@bl.co+([.][a-zA-Z]{2})?$");
+		Pattern p = Pattern.compile("^abc+([_+-.]{0,1}([a-zA-Z0-9]+))*[@][a-z0-9]{1,}[.]([c][o][m]|[n][e][t])([.][a-zA-Z]{2,}){0,1}$");
 		Matcher m = p.matcher(email);
 		Boolean check = m.find();
 		if(check) {
