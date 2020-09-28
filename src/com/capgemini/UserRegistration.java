@@ -58,7 +58,7 @@ public class UserRegistration {
 	public void pwd() {
 		System.out.println("Enter your Password:");
 		String pwd = sc.next();
-		Pattern p = Pattern.compile("(?=.*[A-Z])(\\S){7,}$");
+		Pattern p = Pattern.compile("(?=.*[A-Z])(?=.*\\d)(\\S){7,}$");
 		Matcher m = p.matcher(pwd);
 		Boolean check = m.find();
 		if(check) {
