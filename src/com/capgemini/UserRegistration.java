@@ -16,6 +16,7 @@ public class UserRegistration {
         }
         else
         	System.out.println("ERROR ! Requirement not satisfied.");
+        	first=sc.next();
 	}
 	public void lname() {
 		System.out.println("Enter your last name (NOTE: First letter should be capital and shuold have minimum 3 characters) :");
@@ -57,7 +58,7 @@ public class UserRegistration {
 	public void pwd() {
 		System.out.println("Enter your Password:");
 		String pwd = sc.next();
-		Pattern p = Pattern.compile("^\\S{8,}$");
+		Pattern p = Pattern.compile("(?=.*[A-Z])(\\S){7,}$");
 		Matcher m = p.matcher(pwd);
 		Boolean check = m.find();
 		if(check) {
